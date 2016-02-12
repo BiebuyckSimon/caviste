@@ -45,5 +45,13 @@ $twig = new Twig_Environment($loader, [
 ]);
 
 
+// Intégration RedBean
+define('LIB_PATH', __DIR__.'/../vendor/');
+
+require LIB_PATH.'RedBean/rb.php';
+
+R::setup('mysql:host=localhost;dbname=cavavin', 'root', 'root');
+
+
 // Run app
 $app->run();
