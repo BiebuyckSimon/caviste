@@ -25,5 +25,25 @@ require __DIR__ . '/../src/middleware.php';
 // Register routes
 require __DIR__ . '/../src/routes.php';
 
+
+
+// Inclusion et chargement de Twig
+include_once(__DIR__.'/../vendor/twig/twig/lib/Twig/Autoloader.php');
+Twig_Autoloader::register();
+
+// Création d'un chargeur de template
+$loader = new Twig_Loader_Filesystem(__DIR__.'/../templates');
+
+//Création et configuration du moteur de template Twig
+$twig = new Twig_Environment($loader, [
+  'cache' => false,				      // Donner le chemin du dossier pour activer le cache
+  'debug' => true,
+  'charset' => 'utf-8',			    // Valeur par défaut
+  'auto_reload' => true,		    // Regénère le template si la source a été modifiée
+  'strict_variables' => true,	  // Génère une exception si une variable du template n'est pas déclarée
+  'autoescape' => true			    // Valeur par défaut 
+]);
+
+
 // Run app
 $app->run();
