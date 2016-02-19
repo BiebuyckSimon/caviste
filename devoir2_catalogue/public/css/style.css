@@ -1,0 +1,68 @@
+/* GENERAL */
+
+h1 {
+	color: #d20036;
+	font-size: 30px;
+}
+
+#containerLiens {
+    width: 340px;
+    margin-top: 40px;
+}
+
+a {
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    border: 1px solid lightgrey;
+    color: lightgrey;
+    text-align: center;
+}
+
+a:hover {
+    color: white;       
+    background-color: lightgrey;         
+}
+
+
+
+/* ALLWINES & COUNTRIESWINES */
+
+h3 {
+	padding-bottom: 0px;
+	padding-top: 20px;
+	color: #0a3f8b;
+}
+
+ul {
+	width: 300px;
+	text-align: justify;
+}
+
+.label { font-weight: bold; }
+
+
+
+/* PICTURESWINES */
+
+#itemsWines { font-size: 0px; }
+
+.itemWines {
+	width: 25%;
+	display: inline-block;
+  	padding: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	text-align: center;
+}
+
+.itemWines img { width: 50%; }
+
+.itemWines div {
+	padding-top: 20px;
+	padding-bottom: 10px;
+    border-bottom: 3px solid gray;
+	font-size: 14px;
+}

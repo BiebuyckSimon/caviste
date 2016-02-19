@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'/>
+    <title> Pictures Wines </title>
+    <link rel="stylesheet" media="screen" type="text/css" href="css/style.css" />
+</head>
+<body>
+    <h1>Pictures Wines</h1>
+   	
+    <div id="itemsWines" >
+       	{% for wine in tabWines %}
+       		<div class="itemWines" >
+       			<img src="img/{{ wine.picture }}" alt="{{ wine.name }}" />
+       			<div>{{ wine.name }}</div>
+       		</div>
+        {% endfor  %}
+    </div>
+
+    <div id="containerLiens">
+        <a href="/">Index</a>
+        <a href="/allwines">Voir la liste des vins</a>
+        <a href="/countrieswines">Voir la liste des vins triée par pays</a>
+    </div>
+</body>
+</html>

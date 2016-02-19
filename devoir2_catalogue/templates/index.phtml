@@ -22,16 +22,35 @@
                 font-weight: 200;
                 margin-bottom: 0;
             }
+
+            #containerLiens {
+                width: 500px;
+                margin: 40px auto 0px auto;
+            }
+
+            a {
+                display: block;
+                padding: 5px 10px;
+                margin-bottom: 20px;
+                text-decoration: none;
+                border: 1px solid lightgrey;
+                color: lightgrey;
+            }
+            
+            a:hover {
+                color: white;       
+                background-color: lightgrey;         
+            }
         </style>
     </head>
     <body>
         <h1>Slim</h1>
-        <div>a microframework for PHP</div>
+        <div>A microframework for PHP</div>
 
-        <?php if (isset($name)) : ?>
-            <h2>Hello <?= htmlspecialchars($name); ?>!</h2>
-        <?php else: ?>
-            <p>Try <a href="/SlimFramework">/SlimFramework</a>
-        <?php endif; ?>
+        <div id="containerLiens">
+            <a href="/allwines">Voir la liste des vins</a>
+            <a href="/pictureswines">Voir tous les vins accompagnés de leur photo</a>
+            <a href="/countrieswines">Voir la liste des vins triée par pays</a>
+        </div>
     </body>
 </html>

@@ -34,23 +34,26 @@ Twig_Autoloader::register();
 // Création d'un chargeur de template
 $loader = new Twig_Loader_Filesystem(__DIR__.'/../templates');
 
-//Création et configuration du moteur de template Twig
+// Création et configuration du moteur de template Twig
 $twig = new Twig_Environment($loader, [
-  'cache' => false,				      // Donner le chemin du dossier pour activer le cache
+  'cache' => false,             // Donner le chemin du dossier pour activer le cache
   'debug' => true,
-  'charset' => 'utf-8',			    // Valeur par défaut
-  'auto_reload' => true,		    // Regénère le template si la source a été modifiée
-  'strict_variables' => true,	  // Génère une exception si une variable du template n'est pas déclarée
-  'autoescape' => true			    // Valeur par défaut 
+  'charset' => 'utf-8',         // Valeur par défaut
+  'auto_reload' => true,        // Regénère le template si la source a été modifiée
+  'strict_variables' => true,   // Génère une exception si une variable du template n'est pas déclarée
+  'autoescape' => true          // Valeur par défaut 
 ]);
+$twig->addExtension(new Twig_Extension_Debug());
+
 
 
 // Intégration RedBean
 define('LIB_PATH', __DIR__.'/../vendor/');
-
 require LIB_PATH.'RedBean/rb.php';
 
+// Connection à la DB
 R::setup('mysql:host=localhost;dbname=cavavin', 'root', 'root');
+
 
 
 // Run app

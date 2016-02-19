@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'/>
+    <title> Countries Wines </title>
+	<link rel="stylesheet" media="screen" type="text/css" href="css/style.css" />
+</head>
+<body>
+    <h1>Countries Wines<h1>
+   	
+   	{% for country in tabCountries %}
+   		<h3>{{ country }} </h3>
+   		
+   		{% for wine in tabWines %}
+   			{% if wine.country == country %}
+		   		<ul>
+		   			<li><span class="label">Id:</span> {{ wine.id }}</li>
+		   			<li><span class="label">Name:</span> {{ wine.name }}</li>
+		   			<li><span class="label">Year:</span> {{ wine.year }}</li>
+		   			<li><span class="label">Grapes:</span> {{ wine.grapes }}</li>
+		   			<li><span class="label">Country:</span> {{ wine.country }}</li>
+		   			<li><span class="label">Region:</span> {{ wine.region }}</li>
+		   			<li><span class="label">Description:</span> {{ wine.description }}</li>
+		   		</ul>
+		   	{% endif %}
+    	{% endfor  %}
+
+    {% endfor  %}
+
+    <div id="containerLiens">
+        <a href="/">Index</a>
+        <a href="/allwines">Voir la liste des vins</a>
+        <a href="/pictureswines">Voir tous les vins accompagnés de leur photo</a>
+    </div>
+</body>
+</html>
