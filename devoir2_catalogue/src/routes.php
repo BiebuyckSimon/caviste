@@ -1,10 +1,7 @@
 <?php
 
 // Route de base
-$app->get('/', function ($request, $response ) {
-
-	// Récupération de la variable globale "twig"
-	global $twig; 
+$app->get('/', function ($request, $response ) use ($twig) {
 
 	// On affiche le template "index.phtml" (template par défaut)
     echo $twig->render( 'index.phtml' );
@@ -13,10 +10,7 @@ $app->get('/', function ($request, $response ) {
 
 
 // Afficher la liste des vins
-$app->get('/allwines', function ($request, $response ) {
-	
-	// Récupération de la variable globale "twig"
-	global $twig; 
+$app->get('/allwines', function ($request, $response ) use ($twig) {
 
 	// Récupération des vins au moyen de la fonction "recupWines"
 	$tabWines = recupWines();
@@ -27,10 +21,7 @@ $app->get('/allwines', function ($request, $response ) {
 
 
 // Afficher les vins sous forme d'une grille avec leur photo
-$app->get('/pictureswines', function ($request, $response ) {
-
-	// Récupération de la variable globale "twig"
-	global $twig; 
+$app->get('/pictureswines', function ($request, $response ) use ($twig) {
 
 	// Récupération des vins au moyen de la fonction "recupWines"
 	$tabWines = recupWines();
@@ -41,10 +32,7 @@ $app->get('/pictureswines', function ($request, $response ) {
 
 
 // Afficher les vins triés par pays
-$app->get('/countrieswines', function ($request, $response ) {
-
-	// Récupération de la variable globale "twig"
-	global $twig; 
+$app->get('/countrieswines', function ($request, $response ) use ($twig) {
 
 	// Récupération des vins au moyen de la fonction "recupWines"
 	$tabWines = recupWines();

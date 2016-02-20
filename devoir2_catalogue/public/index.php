@@ -22,9 +22,6 @@ require __DIR__ . '/../src/dependencies.php';
 // Register middleware
 require __DIR__ . '/../src/middleware.php';
 
-// Register routes
-require __DIR__ . '/../src/routes.php';
-
 
 
 // Inclusion et chargement de Twig
@@ -47,8 +44,13 @@ $twig->addExtension(new Twig_Extension_Debug());
 
 
 
+// Register routes
+require __DIR__ . '/../src/routes.php';
+
+
+
 // Intégration RedBean
-define('LIB_PATH', __DIR__.'/../vendor/');
+define('LIB_PATH', __DIR__.'/../library/');
 require LIB_PATH.'RedBean/rb.php';
 
 // Connection à la DB
