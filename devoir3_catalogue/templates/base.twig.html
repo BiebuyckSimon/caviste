@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" media="screen" type="text/css" href="../public/css/foundation.css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="../public/css/app.css">
+    <link rel="stylesheet" media="screen" type="text/css" href="../public/css/style.css" />
+</head>
+<body>
+    {% block content %}
+        <h1>{% block titrePrincipal %}{% endblock %}</h1>
+    {% endblock %}
+
+    <div id="containerLiens">
+        <a href="index.php" class="linkOtherPage" >Index</a>
+        {% block link %}{% endblock %}
+    </div>
+
+    <script src="../public/js/vendor/jquery.min.js" ></script>
+    <script src="../public/js/vendor/what-input.min.js"></script>
+    <script src="../public/js/foundation.min.js" ></script>
+    <script src="../public/js/app.js" ></script>
+</body>
+</html>

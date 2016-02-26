@@ -1,0 +1,125 @@
+/* GENERAL */
+
+body { margin: 20px; }
+
+h1 {
+    margin-bottom: 40px;
+	color: #d20036;
+	font-size: 50px;
+}
+
+.bold { font-weight: bold; }
+
+#containerLiens {
+    width: 360px;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+
+a.linkOtherPage {
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    border: 1px solid lightgrey;
+    color: lightgrey;
+    text-align: center;
+}
+
+a.linkOtherPage:hover {
+    color: white;       
+    background-color: lightgrey;         
+}
+
+
+
+/* CATALOGUE */
+
+#offCanvas { background: #333333; }
+
+#menuTri {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#menuTri label {
+    height: 40px;
+    padding : 10px 0px 0px 10px;
+    background: #444444;
+    color: #999999;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#menuTri a {
+    display: block;
+    padding: 0.66667rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: background 300ms ease;
+    outline : none; 
+}
+
+#menuTri a:hover, #menuTri a:active  {
+    background: #242424
+}
+
+.title-bar {
+    height: 40px;
+    margin-bottom: 40px;
+}
+
+#contentWine { padding: 20px; }
+
+#frmFiltrePays { margin-bottom: 40px; }
+
+select { 
+    width: 200px; 
+    outline : none; 
+}
+
+.itemWines { 
+    min-height: 380px;
+    padding: 20px; 
+    text-align: center; 
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.itemWines img { width: 80%; }
+
+.itemWines div { 
+    text-align: left; 
+    line-height: 1.5; 
+}
+
+.region {  
+    margin-top: 40px;     
+    font-weight: bold;
+ }
+
+ .reveal img {
+    width: 30%;
+    padding: 20px;
+    margin: 0px 20px 20px 0px;
+    float: left;
+    border: 1px solid lightgrey;
+}
+
+.descriptionLightBox { clear: both; }
+
+#pagination { padding : 40px 0px 60px 0px; }
+
+
+
+/* LISTE */
+
+h3 {
+	margin-top: 40px;
+	color: #0a3f8b;
+}
+
+ul#listCountries {
+	width: 320px;
+	text-align: justify;
+}

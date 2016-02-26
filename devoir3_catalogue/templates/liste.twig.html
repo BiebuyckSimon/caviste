@@ -1,0 +1,33 @@
+{% extends "base.twig.html" %}
+
+
+{% block title %}Liste des vins triée par pays{% endblock %}
+
+
+{% block titrePrincipal %}Liste des vins triée par pays{% endblock %}
+
+
+{% block content %}
+    {{ parent() }}
+    {% for country in tabCountries %}
+        <h3>{{ country }} </h3>       
+        {% for wine in tabWines %}
+            {% if wine.country|upper == country %}
+                <ul id="listCountries" >
+                    <li><span class="bold">Id:</span> {{ wine.id }}</li>
+                    <li><span class="bold">Name:</span> {{ wine.name }}</li>
+                    <li><span class="bold">Year:</span> {{ wine.year }}</li>
+                    <li><span class="bold">Grapes:</span> {{ wine.grapes }}</li>
+                    <li><span class="bold">Country:</span> {{ wine.country }}</li>
+                    <li><span class="bold">Region:</span> {{ wine.region }}</li>
+                    <li><span class="bold">Description:</span> {{ wine.description }}</li>
+                </ul>
+            {% endif %}
+        {% endfor  %}
+    {% endfor  %}
+{% endblock %}
+
+
+{% block link %}
+    <a href="catalogue" class="linkOtherPage" >Voir le catalogue des vins</a>
+{% endblock %}

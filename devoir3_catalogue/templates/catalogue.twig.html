@@ -1,0 +1,86 @@
+{% extends "base.twig.html" %}
+
+
+{% block title %}Catalogue des vins{% endblock %}
+
+
+{% block titrePrincipal %}Catalogue des vins{% endblock %}
+
+
+{% block content %}
+    <div class="off-canvas-wrapper">
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+            <div class="off-canvas position-left" id="offCanvas" data-off-canvas data-position="left">
+                <ul id="menuTri" class="off-canvas-list" >
+                    <label>Trier les vins par </label>
+                    <li id="id" ><a href="" >Id</a></li>
+                    <li id="nom" ><a href="" >Nom</a></li>
+                    <li id="annee" ><a href="" >Année</a></li>
+                </ul>
+            </div>
+            <div class="main-content" data-off-canvas-content>
+
+                <div class="title-bar">
+                    <div class="title-bar-left">
+                        <button class="menu-icon" type="button" data-open="offCanvas"></button>
+                    </div>
+                </div>
+
+                <div id="contentWine" >
+                    {{ parent() }}
+
+                    <form id="frmFiltrePays" >
+                        <fieldset>
+                            <div for="pays" class="bold" >Filtrer les vins par pays :</div>
+                            <select name="pays" id="pays" >
+                                <option value="0">Veuillez choisir</option>
+                                {% for country in tabCountries %}
+                                    <option value="{{ country }}">{{ country }}</option>
+                                {% endfor  %}
+                            </select>
+                        </fieldset>
+                    </form>
+
+                    <div id="affichage"></div>
+
+                    <div id="itemsWines" class="row small-up-1 medium-up-3 large-up-4" >
+                        {% for wine in tabWines %}
+                            <div class="itemWines column thumbnail" data-open="{{ wine.id }}" href="#" >
+                                <img src="img/{{ wine.picture }}" alt="{{ wine.name }}" />
+                                <div class="region" >{{ wine.region }}</div>
+                                <div class="name" >{{ wine.name }}</div>
+                            </div>
+                        {% endfor  %}
+                    </div>
+
+                    {% for wine in tabWines %}
+                        <div class="reveal" id="{{ wine.id }}" data-reveal>
+                	        <h1>{{ wine.name }}</h1>
+
+                            <img src="img/{{ wine.picture }}" alt="{{ wine.name }}" />
+
+                            <div class="idLightBox" ><span class="bold">Id: </span>{{ wine.id }}</div>
+                            <div class="nameLightBox" ><span class="bold">Name: </span>{{ wine.name }}</div>
+                            <div class="yearLightBox" ><span class="bold">Year: </span>{{ wine.year }}</div>
+                            <div class="grapesLightBox" ><span class="bold">Grapes: </span>{{ wine.grapes }}</div>
+                            <div class="countryLightBox" ><span class="bold">Country: </span>{{ wine.country }}</div>
+                            <div class="regionLightBox" ><span class="bold">Region: </span>{{ wine.region }}</div>
+                            <div class="descriptionLightBox" ><span class="bold">Description: </span> {{ wine.description }}</div>
+
+                	        <button class="close-button" data-close type="button" ><span>&times;</span></button>
+                      	</div>
+                    {% endfor  %}
+
+                    <ul class="pagination text-center" role="menubar" aria-label="Pagination" id="pagination" value="{{ nbWines }}"></ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block link %}
+    <a href="liste" class="linkOtherPage" >Voir la liste des vins triée par pays</a>
+{% endblock %}
