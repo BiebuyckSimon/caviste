@@ -30,6 +30,10 @@ $( function () {
 			// Modification du catalogue
 			modificationCatalogue(data);
 
+			// On remet à sa valeur d'origine la liste déroulante des pays
+			$('#pays option').removeAttr('selected');
+			$('#pays option').eq(0).attr('selected','selected');
+
  		})
 		.fail( function() {
 
