@@ -60,9 +60,7 @@ a.linkOtherPage:hover {
     outline : none; 
 }
 
-#menuTri a:hover, #menuTri a:active  {
-    background: #242424
-}
+#menuTri a:hover, #menuTri a:active  { background: #242424; }
 
 .title-bar {
     height: 40px;
@@ -75,7 +73,7 @@ a.linkOtherPage:hover {
 
 select { 
     width: 200px; 
-    outline : none; 
+    outline: none; 
 }
 
 .itemWines { 
@@ -109,6 +107,8 @@ select {
 .descriptionLightBox { clear: both; }
 
 #pagination { padding : 40px 0px 60px 0px; }
+
+.currentPage { color: red !important; }
 
 
 

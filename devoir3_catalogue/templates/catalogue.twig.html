@@ -10,6 +10,7 @@
 {% block content %}
     <div class="off-canvas-wrapper">
         <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+            
             <div class="off-canvas position-left" id="offCanvas" data-off-canvas data-position="left">
                 <ul id="menuTri" class="off-canvas-list" >
                     <label>Trier les vins par </label>
@@ -71,11 +72,10 @@
                       	</div>
                     {% endfor  %}
 
-                    <ul class="pagination text-center" role="menubar" aria-label="Pagination" id="pagination" value="{{ nbWines }}"></ul>
+                    <ul class="pagination text-center" role="menubar" aria-label="Pagination" id="pagination" data-nb-wines="{{ nbWines }}" data-current-page="{{ currentPage }}"></ul>
                 </div>
 
             </div>
-
         </div>
     </div>
 {% endblock %}
