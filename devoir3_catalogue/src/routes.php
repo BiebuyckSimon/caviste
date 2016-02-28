@@ -95,11 +95,9 @@ $app->get( '/tri/{typeTri}', function ($request, $response, $args ) use ($twig) 
 	// Récupération du type de tri
     $typeTri = $args['typeTri'];
 
-    // Création d'une variable de session permettant de conserver le type de tri
+	// Modification des variables de session
     $_SESSION['typeTri'] = $typeTri;
-    if ( isset( $_SESSION['pays'] )) {
-    	$_SESSION['pays'] = null;
-    }
+    $_SESSION['pays'] = null;
 
     // Récupération des vins triés selon le type de tri demandé
 	if ( $typeTri == 'nom' ) {
@@ -128,11 +126,9 @@ $app->get( '/filtre/{pays}', function ($request, $response, $args ) use ($twig) 
 	// Récupération du pays choisi
     $pays = $args['pays'];
 
-    // Création d'une variable de session permettant de conserver le pays choisi
+    // Modification des variables de session
     $_SESSION['pays'] = $pays;
-    if ( isset( $_SESSION['typeTri'] )) {
-    	$_SESSION['typeTri'] = null;
-    }
+    $_SESSION['typeTri'] = null;
 
     // Récupération des vins appartenant au pays choisi
 	$tabWines = R::find('wine', 'country = :pays LIMIT 0, 6', [':pays'=>$pays]);
